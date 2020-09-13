@@ -1,0 +1,5 @@
+<h1>Exclusão de cliente</h1>
+<form method="post">{% csrf_token %}
+    Você tem certeza que deseja excluir "{{ object }}" ?
+    <input type="submit" value="Submit" />
+</form>

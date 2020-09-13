@@ -1,0 +1,24 @@
+<h1>Clientes</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Nome</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for cliente in object_list %}
+    <tr>
+    <td>{{ cliente.nome }}</td>
+    <td><a href="{% url "cliente_view" cliente.id %}">view</a></td>
+    <td><a href="{% url "cliente_edit" cliente.id %}">edit</a></td>
+    <td><a href="{% url "cliente_delete" cliente.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "cliente_new" %}">New</a>
